@@ -1,0 +1,12 @@
+# SCRY will import all procedures from all modules specified below.
+#
+# It is highly recommend developers use the __all__ attribute make SCRY only import Procedures from these files.
+#
+# Future versions will support white- and/or blacklisting specific functions from those files,
+# along with various other security and authorization settings.
+
+
+services.MATH.basic
+
+services.BLAST.fetch_sequence
+services.BLAST.run_blast
