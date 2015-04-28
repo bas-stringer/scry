@@ -7,8 +7,9 @@ __version__ = '0.2'
 
 DEBUG               = True
 ALLOW_REMOTE_ACCESS = True
+IP_WHITELIST        = ['130.37.193.190']
 LOG_DIRECTORY       = '/home/bas/Documents/SCRY/logs/'  # Directory for SCRY to log HTTP requests and responses in -- will be created if it does not exist
-SERVICE_CONFIG_FILE = '/home/bas/Documents/SCRY/source_code/services/registered_modules.txt'
+SERVICE_CONFIG_FILE = '/home/bas/Documents/SCRY/scry/services/registered_modules.txt'
 ORB_DESCRIPTION     = {'author'      : "Bas Stringer",
                        'description' : "SCRY - the SPARQL Compatible seRvice laYer (version %s)" % __version__,
                        'provenance'  : "SCRY - the SPARQL Compatible seRvice laYer (version %s)" % __version__,

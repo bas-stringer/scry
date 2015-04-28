@@ -2,7 +2,7 @@
 import services
 import flask
 
-from __init__      import DEBUG, ALLOW_REMOTE_ACCESS, SERVICE_CONFIG_FILE, ORB_DESCRIPTION
+from __init__      import DEBUG, ALLOW_REMOTE_ACCESS, IP_WHITELIST, SERVICE_CONFIG_FILE, ORB_DESCRIPTION
 from query_handler import QueryHandler
 
 # Create and configure the web application -- config.from_object uses the DEBUG variable
@@ -18,8 +18,13 @@ def scry_home():
 @orb.route('/scry/', methods=['GET', 'POST'])
 def scry_query():
     print "SCRY REQUEST RECEIVED"
-    query = QueryHandler(flask.request, flask.g)
-    return query.resolve()
+    ip = flask.request.remote_addr
+    if ip in IP_WHITELIST:
+        print flask.g['service_config']
+        query = QueryHandler(flask.request, flask.g)
+        return query.resolve()
+    else:
+        return "This IP address (%s) is not on the queried SCRY orb's whitelist." % ip, 500
 
 @orb.errorhandler(500)
 def scry_error(e):

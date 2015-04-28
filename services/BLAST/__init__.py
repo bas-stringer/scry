@@ -12,7 +12,7 @@ BLAST_BIN_ROOT  = '/usr/local/ncbi-blast-2.2.29+/bin/'  # Path to local BLAST 2.
 BLAST_DB_ROOT   = '/usr/local/ncbi-blast-2.2.29+/db/'   # Path to local BLAST 2.2.29+ compatible databases
 
 CACHE_SEQUENCES = True  # Set to True if you want files of input sequences to be stored locally
-CACHE_DIRECTORY = '/home/bas/Documents/SCRY/source_code/services/BLAST/sequence_cache/'
+CACHE_DIRECTORY = '/home/bas/Documents/SCRY/scry/services/BLAST/sequence_cache/'
 
 DEFAULT_DB      = 'HPA'
 DATABASES       = list()
