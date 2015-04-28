@@ -20,7 +20,6 @@ def scry_query():
     print "SCRY REQUEST RECEIVED"
     ip = flask.request.remote_addr
     if ip in IP_WHITELIST:
-        print flask.g['service_config']
         query = QueryHandler(flask.request, flask.g)
         return query.resolve()
     else:
